@@ -5,7 +5,6 @@ PRODUCT=$(HOME)/bin/timeAverage
 
 
 
-CC=gcc
 CFLAGS=-lm -O2 -Wall #-I$(NR)/include
 
 all: $(PRODUCT)

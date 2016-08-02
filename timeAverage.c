@@ -85,14 +85,22 @@ int main(int argc, char *argv[] )
     fclose(inFilePtr);
   }
 
-  //______Perform checks_______
+
+  //Find the shortest file
+  currentFilePoints = 10e5;
   for(i=1; i<=argc-2; i++) {
+    if( nPoints[i] <currentFilePoints ) currentFilePoints=nPoints[i];
+  }
+
+  
+  //______Check that times in all files agree_______
+  for(i=1; i<=argc-2; i++) {
+
+
+
     
-    //Are the number of points the same?
-    if( nPoints[i] != nPoints[i+1] ){
-      fprintf(stderr,"Number of points in files %s and %s are different\n",argv[i],argv[i+1]);
-      exit( EXIT_FAILURE);
-    }
+    
+
 
     //loop over all lines of the file
     for(j=1; j<=currentFilePoints ; j++){
