@@ -88,10 +88,12 @@ int main(int argc, char *argv[] )
 
   //Find the shortest file
   currentFilePoints = 10e5;
-  for(i=1; i<=argc-2; i++) {
+  for(i=1; i<=argc-1; i++) {
+    //printf("%ld %ld\n",currentFilePoints, nPoints[i]);
     if( nPoints[i] <currentFilePoints ) currentFilePoints=nPoints[i];
   }
 
+  fprintf(stderr,"Going to average over first %ld points\n",currentFilePoints);
   
   //______Check that times in all files agree_______
   for(i=1; i<=argc-2; i++) {
